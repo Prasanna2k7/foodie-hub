@@ -60,7 +60,7 @@ const Landing: React.FC = () => {
               className="inline-flex items-center space-x-2 glass-morphism px-6 py-3 rounded-full border border-black/10 dark:border-white/20 mb-8 hover-lift transition-all duration-500 hover:scale-105"
             >
               <Award className="w-5 h-5 text-orange-500" />
-              <span className="text-orange-600 dark:text-orange-400 text-sm font-medium">Premium Food Experience</span>
+              <span className="text-orange-600 dark:text-orange-400 text-sm font-medium px-2">Premium Food Experience</span>
               <Coffee className="w-5 h-5 text-red-500" />
             </div>
           </div>
