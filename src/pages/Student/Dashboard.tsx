@@ -404,11 +404,22 @@ const StudentDashboard: React.FC = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {filteredMenuItems.map((item) => (
                 <div key={item.id} className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow flex flex-col">
-                  <img
-                    src={item.image_url}
-                    alt={item.name}
-                    className="w-full h-56 object-cover"
-                  />
+                  <div className="relative">
+                    <img
+                      src={item.image_url}
+                      alt={item.name}
+                      className="w-full h-56 object-cover"
+                    />
+                    {/* Rating badge in top right corner */}
+                    <div className="absolute top-3 right-3 bg-black/70 backdrop-blur-sm text-white px-2 py-1 rounded-lg flex items-center space-x-1">
+                      <Star className="w-3 h-3 text-yellow-400 fill-current" />
+                      <span className="text-sm font-medium">{item.rating}</span>
+                    </div>
+                    {/* Available quantity badge in top left corner */}
+                    <div className="absolute top-3 left-3 bg-green-600/90 backdrop-blur-sm text-white px-2 py-1 rounded-lg">
+                      <span className="text-xs font-medium">{item.quantity_available} left</span>
+                    </div>
+                  </div>
                   <div className="p-4 flex flex-col flex-grow">
                     <div className="flex justify-between items-start mb-2">
                       <h3 className="text-lg font-semibold text-gray-900 dark:text-white">{item.name}</h3>
@@ -418,11 +429,7 @@ const StudentDashboard: React.FC = () => {
                     
                     {/* Bottom section with consistent alignment */}
                     <div className="mt-auto space-y-3">
-                      <div className="flex items-center justify-between">
-                        <div className="flex items-center space-x-2">
-                          <Star className="w-4 h-4 text-yellow-400 fill-current" />
-                          <span className="text-sm text-gray-600 dark:text-gray-300">{item.rating}</span>
-                        </div>
+                      <div className="flex items-center justify-end">
                         <span className="text-sm text-gray-500 dark:text-gray-400">Serves {item.serves}</span>
                       </div>
                       <div className="flex items-center justify-between">
