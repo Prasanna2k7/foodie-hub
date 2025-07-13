@@ -25,10 +25,7 @@ const Landing: React.FC = () => {
 
       {/* Header */}
       <header 
-        className="glass-morphism border-b border-black/10 dark:border-white/15 relative z-10"
-        style={{
-          transform: `translateY(${scrollY * 0.1}px)`,
-        }}
+        className="glass-morphism border-b border-black/10 dark:border-white/15 fixed top-0 left-0 right-0 z-50"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex items-center justify-between">
@@ -51,7 +48,7 @@ const Landing: React.FC = () => {
       </header>
 
       {/* Hero Section */}
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-16 relative z-10">
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-16 relative z-10 pt-24 sm:pt-32">
         <div 
           className="text-center mb-12 sm:mb-20"
           style={{
